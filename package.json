@@ -1,0 +1,26 @@
+{
+  "name": "kizuna-platform",
+  "version": "1.0.0",
+  "description": "Friendship Game.  For Vote, Rank,  QA ...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esbb48/Kizuna.git"
+  },
+  "keywords": [
+    "vote",
+    "friendship",
+    "Q&A",
+    "node.js",
+    "girls-tea"
+  ],
+  "author": "esbb48",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/esbb48/Kizuna/issues"
+  },
+  "homepage": "https://github.com/esbb48/Kizuna#readme"
+}
