@@ -1,0 +1,20 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "globals": {
+    "__DEV__": true
+  },
+  "env": {
+    "browser": true,
+    "mocha": true
+  },
+  "rules": {
+    "no-confusing-arrow": 0,
+    "react/jsx-quotes": 0,
+    "react/jsx-filename-extension": 0,
+    "jsx-quotes": [
+      2,
+      "prefer-double"
+    ]
+  }
+}
