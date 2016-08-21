@@ -9,7 +9,7 @@ import { AppContainer } from 'react-hot-loader';
 import rootSaga from './Root/rootSaga';
 
 import configureStore from './store/configureStore';
-import RootApp from './Root/RootApp';
+import Root from './Root/Root';
 
 const store = configureStore({ history });
 
@@ -21,14 +21,14 @@ store.runSaga(rootSaga);
 
 render((
   <AppContainer>
-    <RootApp store={store} history={syncedHistory} />
+    <Root store={store} history={syncedHistory} />
   </AppContainer>
   ), rootElement
 );
 
 if (module.hot) {
-  module.hot.accept('./Root/RootApp', () => {
-    const NextApp = require('./Root/RootApp').default;
+  module.hot.accept('./Root/Root', () => {
+    const NextApp = require('./Root/Root').default;
 
     render((
       <AppContainer>
