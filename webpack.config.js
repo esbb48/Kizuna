@@ -7,7 +7,7 @@ module.exports = {
     'react-hot-loader/patch',
     `webpack-dev-server/client?http://localhost:${PORT}`,
     'webpack/hot/only-dev-server',
-    './src/index.jsx',
+    './src/index.js',
   ],
   module: {
     loaders: [

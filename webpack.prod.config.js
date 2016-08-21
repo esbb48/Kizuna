@@ -11,15 +11,15 @@ const GLOBALS = {
   'process.env.NODE_ENV': '"production"',
 };
 
-
 module.exports = {
   debug: false,
   devtool: false,
   entry: {
     main: './src/index.js',
-    vendor: ['babel-polyfill', 'react', 'react-dom', 'redux', 'redux-saga', 'react-redux', 'react-router',
-      'react-router-redux', 'material-ui', 'react-tap-event-plugin', 'video.js', 'vis', 'moment', 'lodash',
-      'isomorphic-fetch', 'normalizr', 'classnames', 'humps', 'auth0-js'],
+    vendor: [
+      'babel-polyfill', 'react', 'react-dom', 'redux', 'redux-saga',
+      'react-redux', 'react-router', 'react-router-redux', 'isomorphic-fetch', 'classnames',
+    ],
   },
   output: {
     path: buildPath,
@@ -45,11 +45,11 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style!css-loader',
+        loader: 'style!css',
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|eot)$/,
-        loader: 'url-loader',
+        loader: 'url',
         include: [
           path.resolve(__dirname, 'src/assets'),
         ],
@@ -62,7 +62,7 @@ module.exports = {
       {
         // this one is for loading vendor assets
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|eot)$/,
-        loader: 'url-loader',
+        loader: 'url',
         include: [
           path.resolve(nodeModulesDir, 'vis/dist/'),
           path.resolve(nodeModulesDir, 'video.js/dist/'),
