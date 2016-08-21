@@ -4,7 +4,7 @@ import createSagaMiddleware, { END } from 'redux-saga';
 import rootReducer from '../Root/rootReducer';
 // import rootSaga from '../Root/rootSaga';
 
-function configureStore({ initialState = {}, history }) {
+export default function configureStore({ initialState = {}, history }) {
   const route = routerMiddleware(history);
   const sagaMiddleware = createSagaMiddleware();
   const store = createStore(
@@ -12,7 +12,7 @@ function configureStore({ initialState = {}, history }) {
     initialState,
     compose(
       applyMiddleware(route, sagaMiddleware)
-    ),
+    )
   );
 
   store.runSaga = sagaMiddleware.run;
@@ -20,5 +20,3 @@ function configureStore({ initialState = {}, history }) {
 
   return store;
 }
-
-export default configureStore;
