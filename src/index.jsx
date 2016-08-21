@@ -1,19 +1,18 @@
-/* eslint global-require: 0 */
 import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
-import { browserHistory } from 'react-router';
+import { browserHistory as history } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { AppContainer } from 'react-hot-loader';
 
 import rootSaga from './Root/rootSaga';
 
 import configureStore from './store/configureStore';
-import Root from './Root/RootContainer';
+import RootApp from './Root/RootApp';
 
-const store = configureStore({ history: browserHistory });
+const store = configureStore({ history });
 
-const history = syncHistoryWithStore(browserHistory, store);
+const syncedHistory = syncHistoryWithStore(history, store);
 
 const rootElement = document.getElementById('root');
 
@@ -21,18 +20,18 @@ store.runSaga(rootSaga);
 
 render((
   <AppContainer>
-    <Root store={store} history={history} />
+    <RootApp store={store} history={syncedHistory} />
   </AppContainer>
   ), rootElement
 );
 
 if (module.hot) {
-  module.hot.accept('./Root/RootContainer', () => {
-    const NextApp = require('./Root/RootContainer').default;
+  module.hot.accept('./Root/RootApp', () => {
+    const NextApp = require('./Root/RootApp').default;
 
     render((
       <AppContainer>
-        <NextApp store={store} history={history} />
+        <NextApp store={store} history={syncedHistory} />
       </AppContainer>
       ), rootElement
     );

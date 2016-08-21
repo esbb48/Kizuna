@@ -12,5 +12,8 @@ npm start
 ### Run lint
 
 ```
-npm run lint/eslint
+for all
+npm run lint
+or
+npm run eslint
 ```

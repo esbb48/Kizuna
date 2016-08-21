@@ -2,6 +2,7 @@ import { compose, createStore, applyMiddleware } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
 import createSagaMiddleware, { END } from 'redux-saga';
 import rootReducer from '../Root/rootReducer';
+// import rootSaga from '../Root/rootSaga';
 
 function configureStore({ initialState = {}, history }) {
   const route = routerMiddleware(history);

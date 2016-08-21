@@ -6,10 +6,10 @@
   "scripts": {
     "build": "npm run clean && webpack --config ./webpack.prod.config.js",
     "clean": "rm -rf build",
-    "eslint": "eslint src test",
+    "eslint": "./node_modules/.bin/eslint src test",
     "lint": "npm run eslint && npm run stylelint",
-    "start": "webpack-dev-server --devtool eval --progress --colors --hot --history-api-fallback --content-base dist",
-    "stylelint": "stylelint \"src/**/*.scss\" --syntax scss",
+    "start": "./node_modules/.bin/webpack-dev-server --inline --devtool eval --progress --colors --hot --history-api-fallback --content-base dist",
+    "stylelint": "./node_modules/.bin/stylelint \"src/**/*.scss\" --syntax scss",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -31,7 +31,9 @@
   "homepage": "https://github.com/esbb48/Kizuna#readme",
   "dependencies": {
     "babel-polyfill": "^6.9.1",
+    "css-loader": "^0.23.1",
     "grommet": "^0.6.10",
+    "postcss-loader": "^0.10.1",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-hot-loader": "^3.0.0-beta.1",
@@ -40,7 +42,8 @@
     "react-router-redux": "^4.0.5",
     "redux": "^3.5.2",
     "redux-action": "^1.0.0",
-    "redux-saga": "^0.11.0"
+    "redux-saga": "^0.11.0",
+    "sass-loader": "^4.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.7",
@@ -65,8 +68,5 @@
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1",
     "webpack-md5-hash": "0.0.5"
-  },
-  "stylelint": {
-    "extends": "stylelint-config-standard"
   }
 }

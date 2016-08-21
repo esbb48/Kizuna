@@ -1,6 +1,6 @@
 // import { fork } from 'redux-saga/effects';
 
-export default function* root() {
+export default function* rootSaga() {
   yield [
   ];
 }

@@ -7,7 +7,7 @@ module.exports = {
     'react-hot-loader/patch',
     `webpack-dev-server/client?http://localhost:${PORT}`,
     'webpack/hot/only-dev-server',
-    './src/index.js',
+    './src/index.jsx',
   ],
   module: {
     loaders: [
@@ -17,7 +17,7 @@ module.exports = {
         loaders: ['babel'],
       }, {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|eot)$/,
-        loader: 'url-loader',
+        loader: 'url',
         query: {
           name: '[path][name].[ext]?[hash]',
           limit: 500,
@@ -32,7 +32,7 @@ module.exports = {
         ],
       }, {
         test: /\.css$/,
-        loader: 'style!css-loader',
+        loader: 'style!css',
       },
     ],
   },
@@ -45,9 +45,7 @@ module.exports = {
     publicPath: '/',
   },
   devServer: {
-    contentBase: './dist',
     port: PORT,
-    hot: true,
   },
   postcss: [
     require('autoprefixer'),
@@ -56,7 +54,6 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
-    })
+    }),
   ],
-
 };
