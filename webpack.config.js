@@ -30,9 +30,6 @@ module.exports = {
           'postcss',
           'sass?sourceMap',
         ],
-      }, {
-        test: /\.css$/,
-        loader: 'style!css',
       },
     ],
   },
