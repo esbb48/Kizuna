@@ -14,6 +14,6 @@ export default function Root({ store, history }) {
 }
 
 Root.propTypes = {
-  history: PropTypes.object.isRequired,
-  store: PropTypes.object.isRequired,
+  history: PropTypes.shape.isRequired,
+  store: PropTypes.shape.isRequired,
 };
