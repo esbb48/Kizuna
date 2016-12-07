@@ -6,10 +6,10 @@
   "scripts": {
     "build": "npm run clean && webpack --config ./webpack.prod.config.js",
     "clean": "rm -rf build",
-    "eslint": "./node_modules/.bin/eslint src test",
+    "eslint": "eslint src test",
     "lint": "npm run eslint && npm run stylelint",
-    "start": "./node_modules/.bin/webpack-dev-server --inline --devtool eval --progress --colors --hot --history-api-fallback --content-base dist",
-    "stylelint": "./node_modules/.bin/stylelint \"src/**/*.scss\" --syntax scss",
+    "start": "webpack-dev-server --inline --devtool eval --progress --colors --hot --history-api-fallback --content-base dist",
+    "stylelint": "stylelint \"src/**/*.scss\" --syntax scss",
     "test": "mocha test"
   },
   "repository": {
