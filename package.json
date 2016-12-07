@@ -8,7 +8,7 @@
     "clean": "rm -rf build",
     "eslint": "eslint src test",
     "lint": "npm run eslint && npm run stylelint",
-    "start": "webpack-dev-server --inline --devtool eval --progress --colors --hot --history-api-fallback --content-base dist",
+    "start": "webpack-dev-server",
     "stylelint": "stylelint \"src/**/*.scss\" --syntax scss",
     "test": "mocha test"
   },
@@ -44,7 +44,6 @@
     "redux-saga": "^0.13.0"
   },
   "devDependencies": {
-    "autoprefixer": "^6.3.7",
     "babel-core": "^6.11.4",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.4",
@@ -61,7 +60,6 @@
     "mocha": "^3.0.2",
     "node-sass": "^3.8.0",
     "postcss-loader": "^1.2.0",
-    "precss": "^1.4.0",
     "sass-loader": "^4.0.0",
     "should": "^11.1.0",
     "stylelint": "^7.1.0",
