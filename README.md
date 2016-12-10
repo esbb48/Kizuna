@@ -7,8 +7,12 @@ Friendship Game.  For Vote, Rank,  QA ...
 ```
 npm install
 npm start
+
+or
+
+npm start -- --open
+// it will open http://localhost:8080 in browser
 ```
-open [http://localhost:8080/](http://localhost:8080/)
 
 ### Run lint
 
