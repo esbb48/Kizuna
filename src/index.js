@@ -11,6 +11,8 @@ import rootSaga from './Root/rootSaga';
 import configureStore from './store/configureStore';
 import Root from './Root/Root';
 
+import '../node_modules/grommet/grommet.min.css';
+
 const store = configureStore({ history });
 
 const syncedHistory = syncHistoryWithStore(history, store);

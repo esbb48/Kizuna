@@ -21,6 +21,9 @@ module.exports = {
     contentBase: resolve(__dirname, 'dist'),
     publicPath: '/'
   },
+  resolve: {
+    extensions: ['.js', '.scss'],
+  },
   module: {
     loaders: [
       {
@@ -41,6 +44,12 @@ module.exports = {
           'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
           'postcss-loader',
           'sass-loader?sourceMap',
+        ],
+      }, {
+        test: /\.css$/,
+        loaders: [
+          'style-loader',
+          'css-loader',
         ],
       },
     ],
