@@ -31,7 +31,6 @@
   "homepage": "https://github.com/esbb48/Kizuna#readme",
   "dependencies": {
     "babel-polyfill": "^6.9.1",
-    "extract-text-webpack-plugin": "^v2.0.0-beta.4",
     "grommet": "^1.0.1",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
@@ -51,6 +50,7 @@
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
     "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^v2.0.0-beta.4",
     "eslint": "^3.2.2",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.2.0",
