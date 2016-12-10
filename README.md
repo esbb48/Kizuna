@@ -22,3 +22,9 @@ npm run lint
 or
 npm run eslint
 ```
+
+### Fix eslint
+
+```
+npmr run fix
+```

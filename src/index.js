@@ -25,7 +25,8 @@ render((
   <AppContainer>
     <Root store={store} history={syncedHistory} />
   </AppContainer>
-  ), rootElement,
+  ),
+  rootElement,
 );
 
 if (module.hot) {
@@ -36,7 +37,8 @@ if (module.hot) {
       <AppContainer>
         <NextApp store={store} history={syncedHistory} />
       </AppContainer>
-      ), rootElement,
+      ),
+      rootElement,
     );
   });
 }
