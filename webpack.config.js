@@ -3,6 +3,16 @@ const { resolve } = require('path');
 const webpack = require('webpack');
 
 module.exports = {
+  context: resolve(__dirname, 'src'),
+  devtool: 'cheap-module-eval-source-map',
+  devServer: {
+    hot: true,
+    contentBase: resolve(__dirname, 'dist'),
+    publicPath: '/'
+  },
+  resolve: {
+    extensions: ['.js', '.scss'],
+  },
   entry: [
     'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:8080',
@@ -13,16 +23,6 @@ module.exports = {
     filename: 'bundle.js',
     path: resolve(`${__dirname}/dist`),
     publicPath: '/',
-  },
-  context: resolve(__dirname, 'src'),
-  devtool: 'cheap-module-eval-source-map',
-  devServer: {
-    hot: true,
-    contentBase: resolve(__dirname, 'dist'),
-    publicPath: '/'
-  },
-  resolve: {
-    extensions: ['.js', '.scss'],
   },
   module: {
     loaders: [
