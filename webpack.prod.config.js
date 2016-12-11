@@ -49,10 +49,10 @@ module.exports = {
         },
       }, {
         test: /\.css$/,
-        loaders: [
-          'style-loader',
-          'css-loader',
-        ],
+        loader: ExtractTextPlugin.extract({
+            fallbackLoader: 'style-loader',
+            loader: 'css-loader',
+        }),
       },
     ],
   },
