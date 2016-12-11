@@ -61,7 +61,6 @@
     "html-webpack-plugin": "^2.24.1",
     "mocha": "^3.0.2",
     "node-sass": "^3.8.0",
-    "postcss-loader": "^1.2.0",
     "sass-loader": "^4.0.0",
     "should": "^11.1.0",
     "style-loader": "^0.13.1",
