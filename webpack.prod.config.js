@@ -21,7 +21,7 @@ module.exports = {
     ],
   },
   output: {
-    path: resolve(__dirname, 'build'),
+    path: resolve(__dirname, 'dist'),
     publicPath: '/',
     filename: '[name].[chunkhash:6].js',
     chunkFilename: '[name].[chunkhash:6].[ext]',
@@ -33,13 +33,6 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
       }, {
-        test: /\.scss$/,
-        loaders: [
-          'style-loader',
-          'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-          'sass-loader',
-        ],
-      }, {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|eot)$/,
         loader: 'url-loader',
         query: {
@@ -47,6 +40,13 @@ module.exports = {
           name: ['assets', '[path][name].[hash:base64:6].[ext]'].join('/'),
           limit: 500,
         },
+      }, {
+        test: /\.scss$/,
+        loaders: [
+          'style-loader',
+          'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+          'sass-loader',
+        ],
       }, {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
@@ -70,8 +70,6 @@ module.exports = {
         warnings: false,
       },
     }),
-    new HtmlWebpackPlugin({
-      template: './index.html',
-    }),
+    new HtmlWebpackPlugin({ template: './index.html' }),
   ]
 };

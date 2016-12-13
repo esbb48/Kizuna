@@ -6,9 +6,9 @@ import RootRender from '../src';
 
 const render = () => {
   ReactDOM.render((
-      <AppContainer>
-        <RootRender />
-      </AppContainer>
+    <AppContainer>
+      <RootRender />
+    </AppContainer>
     ),
     document.querySelector('root'),
   );

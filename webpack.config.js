@@ -34,7 +34,8 @@ module.exports = {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|eot)$/,
         loader: 'url-loader',
         query: {
-          name: '[path][name].[ext]?[hash]',
+          context: './src/assets/',
+          name: ['assets', '[path][name].[hash:base64:6].[ext]'].join('/'),
           limit: 500,
         },
       }, {
