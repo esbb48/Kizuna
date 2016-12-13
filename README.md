@@ -7,24 +7,23 @@ Friendship Game.  For Vote, Rank,  QA ...
 ```
 npm install
 npm start
+```
 
-or
+or, it will open http://localhost:8080 in browser
 
+```
 npm start -- --open
-// it will open http://localhost:8080 in browser
 ```
 
 ### Run lint
 
 ```
-for all
 npm run lint
-or
 npm run eslint
 ```
 
 ### Fix eslint
 
 ```
-npmr run fix
+npm run fix
 ```
