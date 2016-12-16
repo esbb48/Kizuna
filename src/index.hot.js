@@ -1,19 +1,20 @@
+/* eslint global-require: 0 */
+import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
-import RootRender from '../src';
-
 const render = () => {
+  const Root = require('./Root/Root').default;
   ReactDOM.render((
     <AppContainer>
-      <RootRender />
+      <Root />
     </AppContainer>
     ),
-    document.querySelector('root'),
+    document.getElementById('root'),
   );
 };
 
 render();
 
-module.hot.accept('../src', render);
+module.hot.accept('../src/index.hot.js', render);
