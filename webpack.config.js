@@ -2,6 +2,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { resolve } = require('path');
 const webpack = require('webpack');
 
+/** order rule
+
+[a-z] && exclude 4 major key.
+
+entry,
+output,
+module,
+plugins,
+
+**/
+
 module.exports = {
   context: resolve(__dirname, 'src'),
   devtool: 'cheap-module-eval-source-map',

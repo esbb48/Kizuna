@@ -7,6 +7,17 @@ const GLOBALS = {
   'process.env.NODE_ENV': '"production"',
 };
 
+/** order rule
+
+[a-z] && exclude 4 major key.
+
+entry,
+output,
+module,
+plugins,
+
+**/
+
 module.exports = {
   context: resolve(__dirname, 'src'),
   devtool: false,
