@@ -32,10 +32,11 @@ module.exports = {
     ],
   },
   output: {
-    path: resolve(__dirname, 'dist'),
+    chunkFilename: '[name].[chunkhash:6].[ext]',
+    filename: '[name].[chunkhash:6].js',
+    path: resolve(__dirname, '/dist'),
     publicPath: '/',
     filename: '[name].[chunkhash:6].js',
-    chunkFilename: '[name].[chunkhash:6].[ext]',
   },
   module: {
     loaders: [
