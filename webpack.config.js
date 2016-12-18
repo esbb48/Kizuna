@@ -24,16 +24,24 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.scss'],
   },
-  entry: [
-    'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
-    './index.hot.js',
-  ],
+  entry: {
+    main: [
+      'react-hot-loader/patch',
+      'webpack-dev-server/client?http://localhost:8080',
+      'webpack/hot/only-dev-server',
+      './index.hot.js',
+    ],
+    vendor: [
+      'babel-polyfill', 'react', 'react-dom', 'react-redux',
+      'react-router', 'react-router-redux', 'redux', 'redux-action', 'redux-saga',
+    ],
+  },
   output: {
-    filename: 'bundle.js',
+    chunkFilename: '[name].[ext]',
+    filename: '[name].js',
     path: resolve(`${__dirname}/dist`),
     publicPath: '/',
+    filename: '[name].js',
   },
   module: {
     loaders: [
@@ -67,6 +75,9 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({ template: './index.html' }),
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['vendor'],
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
   ],

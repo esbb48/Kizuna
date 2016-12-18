@@ -1,5 +1,4 @@
 /* eslint global-require: 0 */
-import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
