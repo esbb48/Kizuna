@@ -7,9 +7,9 @@ import Box from 'grommet/components/Box';
 import Header from 'grommet/components/Header';
 
 function AuthContainer({ children }) {
-  let pad = { horizontal: 'medium' };
+  const pad = { horizontal: 'medium' };
   return (
-    <App centered={false} inline={true}>
+    <App centered={false} inline>
       <Header colorIndex="brand">
         <Box pad={pad}>
           Kizuna
