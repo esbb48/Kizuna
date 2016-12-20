@@ -1,17 +1,26 @@
 import React, { PropTypes } from 'react';
 // import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import App from 'grommet/components/App';
+import Article from 'grommet/components/Article';
+import Box from 'grommet/components/Box';
 import Header from 'grommet/components/Header';
 
 function AuthContainer({ children }) {
+  let pad = { horizontal: 'medium' };
   return (
-    <div>
-      <Header>My Header</Header>
+    <App centered={false} inline={true}>
+      <Header colorIndex="brand">
+        <Box pad={pad}>
+          Kizuna
+        </Box>
+      </Header>
+
       {/* this will render the child routes */}
-      <div>
+      <Article pad={pad}>
         {children}
-      </div>
-    </div>
+      </Article>
+    </App>
   );
 }
 
