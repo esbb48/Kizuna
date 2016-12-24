@@ -8,11 +8,12 @@ import routes from './routes';
 
 import '../../node_modules/grommet/grommet.min.css';
 
-const store = configureStore({ history });
+export const store = configureStore({ history });
 
 const syncedHistory = syncHistoryWithStore(history, store);
 
 store.runSaga(rootSaga);
+
 
 export default function Root() {
   return (
