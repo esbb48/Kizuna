@@ -9,11 +9,21 @@ npm install
 npm start
 ```
 
+or, it will open http://localhost:8080 in browser
+
+```
+npm start -- --open
+```
+
 ### Run lint
 
 ```
-for all
 npm run lint
-or
 npm run eslint
+```
+
+### Fix eslint
+
+```
+npm run fix
 ```

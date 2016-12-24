@@ -1,12 +1,13 @@
 import React from 'react';
-import { Route } from 'react-router';
+import { IndexRoute, Route } from 'react-router';
 import AuthContainer from '../Auth/AuthContainer';
 import ErrorPage from './ErrorPage';
 import LandingPage from './LandingPage';
 
+
 export default (
   <Route path="/" component={AuthContainer}>
-    <Route path="home" component={LandingPage} />
+    <IndexRoute component={LandingPage} />
     <Route path="*" component={ErrorPage} />
   </Route>
 );

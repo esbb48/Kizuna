@@ -16,7 +16,7 @@ function AuthContainer({ children }) {
 }
 
 AuthContainer.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.shape().isRequired,
 };
 
 function mapStateToProps(/* state */) {
