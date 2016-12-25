@@ -8,10 +8,10 @@ import { store } from './Root';
 
 function checkAuth(nextState, replace) {
   const { pathname } = nextState.location;
-  const { username } = store.getState().authModule;
-  if (username && pathname === '/login') {
+  const { isAuthenticated } = store.getState().authModule;
+  if (isAuthenticated && pathname === '/login') {
     replace('/');
-  } else if (!username && pathname !== '/login') {
+  } else if (!isAuthenticated && pathname !== '/login') {
     replace('/login');
   }
 }

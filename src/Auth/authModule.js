@@ -18,10 +18,7 @@ export default handleActions({
       username,
     });
   },
-  [LOGIN_REQUEST]: (state, { payload }) => {
-    const { username } = payload;
-    return Object.assign({}, state, {
-      username,
-    });
-  },
+  [LOGIN_REQUEST]: state => Object.assign({}, state, {
+    isAuthenticated: true,
+  }),
 }, initialState);

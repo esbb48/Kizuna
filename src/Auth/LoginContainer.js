@@ -18,13 +18,14 @@ class LoginContainer extends Component {
   }
 
   onChangeUsername(event) {
-    const username = event.target.value;
+    const username = event.target.value.trim();
     this.props.changeUsername({ username });
   }
 
   onFormLogin() {
-    const username = 'tempName';
-    this.props.loginRequest({ username });
+    const { username } = this.props;
+    if (username.length === 0) return;
+    this.props.loginRequest();
   }
 
   render() {
