@@ -8,7 +8,7 @@ import routes from './routes';
 
 import '../../node_modules/grommet/grommet.min.css';
 
-export const store = configureStore({ history });
+const store = configureStore({ history });
 
 const syncedHistory = syncHistoryWithStore(history, store);
 

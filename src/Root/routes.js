@@ -4,11 +4,10 @@ import AppContainer from '../App/AppContainer';
 import LoginContainer from '../Auth/LoginContainer';
 import ErrorPage from './ErrorPage';
 import LandingPage from './LandingPage';
-import { store } from './Root';
 
 function checkAuth(nextState, replace) {
   const { pathname } = nextState.location;
-  const { isAuthenticated } = store.getState().authModule;
+  const isAuthenticated = !!localStorage.getItem('KIZUNA_USERNAME');
   if (isAuthenticated && pathname === '/login') {
     replace('/');
   } else if (!isAuthenticated && pathname !== '/login') {

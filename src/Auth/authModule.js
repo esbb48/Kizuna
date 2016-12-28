@@ -7,8 +7,7 @@ export const changeUsername = createAction(CHANGE_USERNAME);
 export const loginRequest = createAction(LOGIN_REQUEST);
 
 const initialState = {
-  isAuthenticated: false,
-  username: '',
+  username: localStorage.getItem('KIZUNA_USERNAME') || '',
 };
 
 export default handleActions({
@@ -18,7 +17,5 @@ export default handleActions({
       username,
     });
   },
-  [LOGIN_REQUEST]: state => Object.assign({}, state, {
-    isAuthenticated: true,
-  }),
+  [LOGIN_REQUEST]: state => state,
 }, initialState);
