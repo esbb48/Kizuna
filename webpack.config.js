@@ -17,9 +17,10 @@ module.exports = {
   context: resolve(__dirname, 'src'),
   devtool: 'cheap-module-eval-source-map',
   devServer: {
-    hot: true,
     contentBase: resolve(__dirname, 'dist'),
-    publicPath: '/'
+    historyApiFallback: true,
+    hot: true,
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.scss'],
