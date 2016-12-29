@@ -6,7 +6,6 @@
   },
   "env": {
     "browser": true,
-    "mocha": true
   },
   "rules": {
     "react/jsx-filename-extension": 0,
