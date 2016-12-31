@@ -81,6 +81,7 @@
   "ava": {
     "babel": "inherit",
     "require": [
+      "babel-polyfill",
       "babel-register"
     ]
   }

@@ -1,19 +1,8 @@
-import { takeEvery } from 'redux-saga';
-import { call, select } from 'redux-saga/effects';
+import { select, take } from 'redux-saga/effects';
 import { LOGIN_REQUEST } from './authModule';
 
-
-function onLogin({ username }) {
-  localStorage.setItem('KIZUNA_USERNAME', username);
-  return Promise.resolve();
-}
-
-function* login() {
+export default function* loginFlow() {
+  yield take(LOGIN_REQUEST);
   const { authModule } = yield select();
-  yield call(onLogin, authModule);
+  localStorage.setItem('KIZUNA_USERNAME', authModule.username);
 }
-
-export default function* watchLogin() {
-  yield* takeEvery(LOGIN_REQUEST, login);
-}
-
