@@ -1,5 +1,5 @@
 import { takeEvery } from 'redux-saga';
-import { call } from 'redux-saga/effects';
+import { call, select } from 'redux-saga/effects';
 import { LOGIN_REQUEST } from './authModule';
 
 
@@ -9,7 +9,8 @@ function onLogin({ username }) {
 }
 
 function* login(args) {
-  yield call(onLogin, args);
+  const { authModule } = yield select();
+  yield call(onLogin, authModule);
 }
 
 export default function* watchLogin() {
