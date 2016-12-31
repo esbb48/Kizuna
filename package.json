@@ -11,7 +11,7 @@
     "lint": "npm run eslint && npm run stylelint",
     "start": "webpack-dev-server",
     "stylelint": "stylelint \"src/**/*.scss\" --syntax scss",
-    "test": "NODE_ENV=test && ava --verbose"
+    "test": "NODE_ENV=test ava --verbose test"
   },
   "repository": {
     "type": "git",
@@ -61,6 +61,7 @@
     "extract-text-webpack-plugin": "^v2.0.0-beta.4",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.24.1",
+    "localStorage": "^1.0.3",
     "node-sass": "^3.8.0",
     "react-hot-loader": "^3.0.0-beta.6",
     "redux-ava": "^2.2.0",

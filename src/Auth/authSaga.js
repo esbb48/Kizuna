@@ -8,7 +8,7 @@ function onLogin({ username }) {
   return Promise.resolve();
 }
 
-function* login(args) {
+function* login() {
   const { authModule } = yield select();
   yield call(onLogin, authModule);
 }
