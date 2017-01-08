@@ -13,18 +13,16 @@ import { changeUsername, loginRequest } from './authModule';
 class LoginContainer extends Component {
   constructor(props) {
     super(props);
-    this.onChangeUsername = this.onChangeUsername.bind(this);
+    this.onUsernameChange = this.onUsernameChange.bind(this);
     this.onFormLogin = this.onFormLogin.bind(this);
   }
 
-  onChangeUsername(event) {
-    const username = event.target.value.trim();
+  onUsernameChange({ target: { value: username } = {} } = {}) {
     this.props.changeUsername({ username });
   }
 
   onFormLogin() {
-    const { username } = this.props;
-    if (username.length === 0) return;
+    if (this.props.username.length === 0) return;
     this.props.loginRequest();
   }
 
@@ -33,17 +31,9 @@ class LoginContainer extends Component {
       <Box align="center">
         <Form pad="medium" fill>
           <Heading align="center" strong>Kizuna</Heading>
-          <Button
-            label="Facebook"
-            fill
-            onClick={() => {}}
-            primary={false}
-            type="button"
-          />
-          <Heading align="center" tag="h4">or</Heading>
           <FormField label="NickName">
             <TextInput
-              onDOMChange={this.onChangeUsername}
+              onDOMChange={this.onUsernameChange}
               value={this.props.username}
             />
           </FormField>
@@ -69,17 +59,15 @@ LoginContainer.propTypes = {
   username: PropTypes.string.isRequired,
 };
 
-function mapStateToProps({ authModule }) {
-  const { username } = authModule;
+const mapStateToProps = ({ authModule: { username } }) => {
   return {
     username,
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    changeUsername: bindActionCreators(changeUsername, dispatch),
-    loginRequest: bindActionCreators(loginRequest, dispatch),
-  };
-}
+const mapDispatchToProps = bindActionCreators.bind(null, {
+  changeUsername,
+  loginRequest,
+});
+
 export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer);
