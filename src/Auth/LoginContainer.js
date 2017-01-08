@@ -59,11 +59,9 @@ LoginContainer.propTypes = {
   username: PropTypes.string.isRequired,
 };
 
-const mapStateToProps = ({ authModule: { username } }) => {
-  return {
-    username,
-  };
-}
+const mapStateToProps = ({ authModule: { username } }) => ({
+  username,
+});
 
 const mapDispatchToProps = bindActionCreators.bind(null, {
   changeUsername,

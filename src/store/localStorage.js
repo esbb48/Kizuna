@@ -1,8 +1,11 @@
 import localStoragePackage from 'localStorage';
 
-let localStorage = localStoragePackage; // eslint-disable-line
+// eslint-disable-next-line import/no-mutable-exports
+let localStorage;
 
-if (process.env.NODE_ENV !== 'test') {
+if (process.env.NODE_ENV === 'test') {
+  localStorage = localStoragePackage;
+} else {
   localStorage = global.window.localStorage;
 }
 

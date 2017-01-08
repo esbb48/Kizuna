@@ -951,7 +951,7 @@ babel-preset-react@^6.11.1:
     babel-plugin-transform-react-jsx-self "^6.11.0"
     babel-plugin-transform-react-jsx-source "^6.3.13"
 
-babel-preset-stage-2@^6.17.0:
+babel-preset-stage-2@^6.17.0, babel-preset-stage-2@^6.18.0:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/babel-preset-stage-2/-/babel-preset-stage-2-6.18.0.tgz#9eb7bf9a8e91c68260d5ba7500493caaada4b5b5"
   dependencies:
@@ -1417,10 +1417,6 @@ clone-regexp@^1.0.0:
 clone-stats@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/clone-stats/-/clone-stats-0.0.1.tgz#b88f94a82cf38b8791d58046ea4029ad88ca99d1"
-
-clone@2:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.0.tgz#9c715bfbd39aa197c8ee0f8e65c3912ba34f8cd6"
 
 clone@^0.2.0:
   version "0.2.0"
@@ -5547,13 +5543,6 @@ reduce-reducers@^0.1.0:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/reduce-reducers/-/reduce-reducers-0.1.2.tgz#fa1b4718bc5292a71ddd1e5d839c9bea9770f14b"
 
-redux-action@^1.0.0:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/redux-action/-/redux-action-1.2.1.tgz#05a22d06aa6fd08ec022459180c891a4971f5a87"
-  dependencies:
-    clone "2"
-    uuid "3"
-
 redux-actions@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/redux-actions/-/redux-actions-1.2.0.tgz#4f421f1aa74c827d5e8abce6c009d5872c4af3e6"
@@ -6660,13 +6649,13 @@ utils-merge@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.0.tgz#0294fb922bb9375153541c4f7096231f287c8af8"
 
-uuid@3, uuid@^3.0.0:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.0.1.tgz#6544bba2dfda8c1cf17e629a3a305e2bb1fee6c1"
-
 uuid@^2.0.1, uuid@^2.0.2:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
+
+uuid@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.0.1.tgz#6544bba2dfda8c1cf17e629a3a305e2bb1fee6c1"
 
 v8flags@^2.0.2:
   version "2.0.11"

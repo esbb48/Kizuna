@@ -12,7 +12,5 @@ const initialState = {
 };
 
 export const reducer = handleActions({
-  [CHANGE_USERNAME]: (state = initialState, { payload: { username } }) => {
-    return { ...state, username };
-  },
+  [CHANGE_USERNAME]: (state = initialState, { payload: { username } }) => ({ ...state, username }),
 }, initialState);
