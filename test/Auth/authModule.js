@@ -7,9 +7,8 @@ import {
   reducer,
 } from '../../src/Auth/authModule';
 
-const username = 'ALi';
+const username = 'Alice';
 
-// Action
 test('Action: changeUsername', actionTest(
   changeUsername,
   { username },
@@ -28,7 +27,6 @@ test('Action: loginRequest', actionTest(
   },
 ));
 
-// Reducer
 test('Reducer: changeUsername', reducerTest(
   reducer,
   { username: '' },
