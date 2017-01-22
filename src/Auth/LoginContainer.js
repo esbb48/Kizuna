@@ -18,7 +18,7 @@ class LoginContainer extends Component {
   }
 
   onUsernameChange({ target: { value: username } = {} } = {}) {
-    this.props.changeUsername({ username });
+    this.props.changeUsername({ username: username.tirm() });
   }
 
   onFormLogin() {
