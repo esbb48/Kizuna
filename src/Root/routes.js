@@ -5,15 +5,17 @@ import LoginContainer from '../Auth/LoginContainer';
 import ErrorPage from './ErrorPage';
 import LandingPage from './LandingPage';
 
-const checkAuth = ({ location: { pathname } }, replace) => {
+const checkAuth = ({ location: { pathname } }, replace, cb) => {
   const isAuthenticated = !!localStorage.getItem('KIZUNA_USERNAME');
 
   if (isAuthenticated && pathname === '/login') {
     replace('/');
+    cb();
   } else if (!isAuthenticated && pathname !== '/login') {
     replace('/login');
+    cb();
   } else if (isAuthenticated) {
-    return;
+    cb();
   } else {
     throw new Error('Impossible state, there must be a bug in the code.');
   }
