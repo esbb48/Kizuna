@@ -28,7 +28,7 @@ module.exports = {
     main: './index.js',
     vendor: [
       'babel-polyfill', 'react', 'react-dom', 'react-redux',
-      'react-router', 'react-router-redux', 'redux', 'redux-action', 'redux-saga',
+      'react-router', 'react-router-redux', 'redux', 'redux-actions', 'redux-saga',
     ],
   },
   output: {

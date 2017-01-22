@@ -6,14 +6,17 @@
   },
   "env": {
     "browser": true,
-    "mocha": true
   },
   "rules": {
     "react/jsx-filename-extension": 0,
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": ["./src/index.hot.js"]
+        "devDependencies": [
+          "./src/index.hot.js",
+          "./src/store/localStorage.js",
+          "./test/**/**.js",
+        ],
       },
     ],
   }

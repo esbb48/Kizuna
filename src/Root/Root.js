@@ -14,6 +14,7 @@ const syncedHistory = syncHistoryWithStore(history, store);
 
 store.runSaga(rootSaga);
 
+
 export default function Root() {
   return (
     <Provider store={store}>
