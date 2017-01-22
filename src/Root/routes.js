@@ -7,10 +7,13 @@ import LandingPage from './LandingPage';
 
 const checkAuth = ({ location: { pathname } }, replace) => {
   const isAuthenticated = !!localStorage.getItem('KIZUNA_USERNAME');
+
   if (isAuthenticated && pathname === '/login') {
     replace('/');
   } else if (!isAuthenticated && pathname !== '/login') {
     replace('/login');
+  } else if (isAuthenticated) {
+    return;
   } else {
     throw new Error('Impossible state, there must be a bug in the code.');
   }
